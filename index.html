@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>FinanzLeo</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; text-align: center; padding: 3rem 1.5rem; color: #333; }
+        a { color: #007aff; }
+    </style>
+</head>
+<body>
+    <p>Zurück zu FinanzLeo …</p>
+    <p><a id="open">Falls nichts passiert: hier tippen</a></p>
+    <script>
+        // Enable Banking only redirects to https addresses. This page forwards the bank's answer
+        // (code, state or error) unchanged to the app, which catches the finanzleo:// address.
+        // Nothing is stored or sent anywhere else.
+        var target = "finanzleo://callback" + window.location.search;
+        document.getElementById("open").href = target;
+        window.location.replace(target);
+    </script>
+</body>
+</html>
